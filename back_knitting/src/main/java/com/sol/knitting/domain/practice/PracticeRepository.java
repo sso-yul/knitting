@@ -1,4 +1,4 @@
-package com.sol.knitting.practice;
+package com.sol.knitting.domain.practice;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

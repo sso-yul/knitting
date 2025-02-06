@@ -1,4 +1,4 @@
-package com.sol.knitting.practice;
+package com.sol.knitting.domain.practice;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,12 +14,12 @@ public class PracticeController {
         this.practiceService = practiceService;
     }
 
-    @GetMapping("/practice")
+    @GetMapping("/api/practice")
     public String practice() {
         return "hi";
     }
 
-    @GetMapping("/practice2")
+    @GetMapping("/api/practice2")
     public ResponseEntity<String> getUser(@RequestParam("id") String id) {
         String result = practiceService.getUserById(id);
         return ResponseEntity.ok(result);
