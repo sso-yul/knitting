@@ -1,9 +1,7 @@
-package com.sol.knitting.practice;
+package com.sol.knitting.domain.practice;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
