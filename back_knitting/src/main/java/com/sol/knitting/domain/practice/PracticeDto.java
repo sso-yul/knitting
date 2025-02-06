@@ -1,4 +1,4 @@
-package com.sol.knitting.practice;
+package com.sol.knitting.domain.practice;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
