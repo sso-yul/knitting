@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("/api/practice2?id=67a1afd4cd059e38f0a35a16")
+      .get("/api/practice4")
       .then((response) => {
         setMessage(response.data);
       })
@@ -33,7 +33,8 @@ function App() {
       안녕하세요
       <Board />
       <div>
-        가져온 메시지 : {message}
+        가져온 메시지 :
+        <div dangerouslySetInnerHTML={{ __html: message }} />
       </div>
     </>
   )

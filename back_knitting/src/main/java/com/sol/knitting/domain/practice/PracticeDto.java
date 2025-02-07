@@ -1,20 +1,20 @@
 package com.sol.knitting.domain.practice;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import lombok.Builder;
+import lombok.Getter;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Document(collection = "users") //테이블 이름 개념
+@Builder
+@Getter
 public class PracticeDto {
-
-    @Id
     private String id;
-
     private String name;
-    private String email;
+
+    public PracticeDto(String name, String id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    public static PracticeDto fromEntity(PracticeEntity practiceEntity) {
+        return new PracticeDto(practiceEntity.getName(), practiceEntity.getId());
+    }
 }
