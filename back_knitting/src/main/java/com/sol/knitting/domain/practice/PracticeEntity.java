@@ -13,12 +13,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "users") //테이블 이
+@Document(collection = "users") //테이블 이름
 public class PracticeEntity {
+
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     private String name;
-    private String email;
-    private String password;
+
 }
