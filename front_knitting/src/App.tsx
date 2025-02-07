@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("/api/practice")
+      .get("/api/practice2?id=67a1afd4cd059e38f0a35a16")
       .then((response) => {
         setMessage(response.data);
       })
