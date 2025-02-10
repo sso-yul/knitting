@@ -1,30 +1,25 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import Board from "./board/Board"
-import axios from 'axios'
+import { getPracticeUserList } from "./api/api.practice.tsx"
 
 function App() {
-  const [message, setMessage] = useState("");
+    const [message, setMessage] = useState("");
 
-  useEffect(() => {
-    axios
-      .get("/api/practice4")
-      .then((response) => {
-        setMessage(response.data);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+    useEffect(() => {
+        getPracticeUserList().then(data => setMessage(data));
+    }, []);
 
-  return (
-    <>
-      안녕하세요
-      <Board />
-      <div>
-        가져온 메시지 :
-        <div dangerouslySetInnerHTML={{ __html: message }} />
-      </div>
-    </>
-  )
+    return (
+        <>
+            안녕하세요
+            <Board />
+            <div>
+                가져온 메시지 :
+                <div dangerouslySetInnerHTML={{ __html: message }} />
+            </div>
+        </>
+    )
 }
 
 export default App
